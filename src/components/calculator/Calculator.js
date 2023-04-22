@@ -78,7 +78,7 @@ function Calculator() {
         let currentResult = String(result);
         let hasEqual = currentHistory.includes('=');
 
-        if (currentHistory == '' && operacao == '=') return true;
+        if (currentHistory === '' && operacao === '=') return true;
 
         if (hasEqual) {
             let newInit = isNaN(currentResult) ? '0' : currentResult;
@@ -87,10 +87,10 @@ function Calculator() {
             incrementHistory(textToHistory);
         }
 
-        if(operacao != '=') return true;
+        if(operacao !== '=') return true;
 
         let newResult = eval(currentHistory.replace(/x/g, '*').replace(/÷/g, '/').replace(/\^(\d+)/g, "**$1").replace(/=/g, ''));
-        if(newResult == Infinity) newResult = 'Error';
+        if(newResult === Infinity) newResult = 'Error';
 
         newResult = String(newResult).length > 10 ? newResult.toPrecision(10) : newResult;
         setResult(String(newResult));
