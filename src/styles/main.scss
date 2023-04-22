@@ -1,0 +1,37 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html, 
+body, 
+#root {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App {
+  position: relative;
+  height: 100%;
+  background-color: var(--base-color);
+}
+
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(var(--calculator-color-special-rgb), 0.5);
+  transition: background-color ease-out .3s;
+
+  &:hover {
+    background-color: rgba(var(--calculator-color-special-rgb), 0.6);
+  }
+  
+  &:active {
+    background-color: rgba(var(--calculator-color-special-rgb), 0.9);
+  }
+}

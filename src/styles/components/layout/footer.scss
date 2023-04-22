@@ -1,0 +1,10 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.footer {
+    padding: 8px 16px;
+    height: 3.5rem;
+    width: 100%;
+    @include flex-display(row, flex-end, center, 1rem);
+    @include text-config(0.8rem, 400, $style: italic);
+}

@@ -1,0 +1,49 @@
+.App.light {
+    --base-color: rgb(231, 231, 231);
+    --base-color-rgb: 231, 231, 231;
+    --base-color-inverse: rgb(0, 0, 17);
+    --base-color-inverse-rgb: 0, 0, 17;
+
+    --text-color: rgb(14, 14, 15);
+    --text-color-rgb: 14, 14, 15;
+    --text-color-inverse: rgb(240, 240, 255);
+    --text-color-inverse-rgb: 240, 240, 255;
+    --shadow-color: rgb(14, 14, 15);
+    --shadow-color-rgb: 14, 14, 15;
+
+    // Calculator
+
+    --calculator-primary-color: rgb(22, 22, 24);
+    --calculator-primary-color-rgb: 22, 22, 24;
+    --calculator-secundary-color: rgb(35, 35, 41);
+    --calculator-secundary-color-rgb: 35, 35, 41;
+    --calculator-visor-color: rgb(211, 211, 211);
+    --calculator-visor-color-rgb: 211, 211, 211;
+    --calculator-color-special: rgb(199, 100, 7);
+    --calculator-color-special-rgb: 199, 100, 7;
+}
+
+.App.dark {
+    --base-color: rgb(0, 0, 17);
+    --base-color-rgb: 0, 0, 17;
+    --base-color-inverse: rgb(231, 231, 231);
+    --base-color-inverse-rgb: 231, 231, 231;
+
+    --text-color: rgb(240, 240, 255);
+    --text-color-rgb: 240, 240, 255;
+    --text-color-inverse: rgb(14, 14, 15);
+    --text-color-inverse-rgb: 14, 14, 15;
+    --shadow-color: rgb(0, 0, 0);
+    --shadow-color-rgb: 0, 0, 0;
+
+    // Calculator
+
+    --calculator-primary-color: rgb(226, 226, 238);
+    --calculator-primary-color-rgb: 226, 226, 238;
+    --calculator-secundary-color: rgb(166, 166, 180);
+    --calculator-secundary-color-rgb: 166, 166, 180;
+    --calculator-visor-color: rgb(54, 54, 54);
+    --calculator-visor-color-rgb: 54, 54, 54;
+    --calculator-color-special: rgb(216, 113, 17);
+    --calculator-color-special-rgb: 216, 113, 17;
+}

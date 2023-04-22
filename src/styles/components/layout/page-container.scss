@@ -1,0 +1,10 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.page-container {
+    padding: 24px;
+    position: relative;
+    height: calc(100% - 7rem);
+    width: 100%;
+    @include flex-center(column, 0rem)
+}
