@@ -29,7 +29,6 @@ function Calculator() {
     //     if (key == 'Enter') key = '=';
 
     //     if(!isNaN(key)) {
-    //         console.log('is number');
     //         incrementHistory(key);
     //         return true;
     //     }
@@ -49,7 +48,6 @@ function Calculator() {
 
     function incrementHistory(str) {
         let currentHistory = String(history);
-        console.log(currentHistory);
         let hasEqual = currentHistory.includes('=');
         
         if (hasEqual) {
@@ -59,7 +57,6 @@ function Calculator() {
 
         let newHistory = currentHistory + str;
         setHistory(newHistory);
-        console.log(history);
     }
 
     function decrementHistory() {
@@ -90,7 +87,7 @@ function Calculator() {
         if(operacao !== '=') return true;
 
         let newResult = eval(currentHistory.replace(/x/g, '*').replace(/÷/g, '/').replace(/\^(\d+)/g, "**$1").replace(/=/g, ''));
-        if(newResult === Infinity) newResult = 'Error';
+        if(newResult === Infinity || isNaN(newResult)) newResult = 'Error';
 
         newResult = String(newResult).length > 10 ? newResult.toPrecision(10) : newResult;
         setResult(String(newResult));
