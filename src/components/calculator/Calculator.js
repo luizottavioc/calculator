@@ -24,7 +24,7 @@ function Calculator() {
     // function handleKeyPress(e) {
     //     const possibleOpKeys = ['+', '-', '*', '/', '^', '=', 'Enter', 'Backspace'];
     //     let key = e.key;
-    
+
     //     if(isNaN(key) && !possibleOpKeys.includes(key)) return true;
     //     if (key == 'Enter') key = '=';
 
@@ -39,7 +39,7 @@ function Calculator() {
     //     }
 
     //     if(possibleOpKeys.includes(key)) {
-    //         makeAccontOperation({ operacao: key, textToHistory: key });
+    //         performCalculation({ operacao: key, textToHistory: key });
     //         return true;
     //     }
 
@@ -49,11 +49,11 @@ function Calculator() {
     function incrementHistory(str) {
         let currentHistory = String(history);
         let hasEqual = currentHistory.includes('=');
-        
+
         if (hasEqual) {
             setHistory(str);
             return true;
-        } 
+        }
 
         let newHistory = currentHistory + str;
         setHistory(newHistory);
@@ -61,7 +61,7 @@ function Calculator() {
 
     function decrementHistory() {
         let currentHistory = history;
-        let newHistory = currentHistory.slice(0,-1);
+        let newHistory = currentHistory.slice(0, -1);
         setHistory(newHistory);
     }
 
@@ -70,7 +70,7 @@ function Calculator() {
         setResult('0');
     }
 
-    function makeAccontOperation({ operacao, textToHistory }) {
+    function performCalculation({ operacao, textToHistory }) {
         let currentHistory = String(history);
         let currentResult = String(result);
         let hasEqual = currentHistory.includes('=');
@@ -80,14 +80,14 @@ function Calculator() {
         if (hasEqual) {
             let newInit = isNaN(currentResult) ? '0' : currentResult;
             setHistory(newInit + textToHistory);
-        }else{
+        } else {
             incrementHistory(textToHistory);
         }
 
-        if(operacao !== '=') return true;
+        if (operacao !== '=') return true;
 
         let newResult = eval(currentHistory.replace(/x/g, '*').replace(/÷/g, '/').replace(/\^(\d+)/g, "**$1").replace(/=/g, ''));
-        if(newResult === Infinity || isNaN(newResult)) newResult = 'Error';
+        if (newResult === Infinity || isNaN(newResult)) newResult = 'Error';
 
         newResult = String(newResult).length > 10 ? newResult.toPrecision(10) : newResult;
         setResult(String(newResult));
@@ -100,27 +100,27 @@ function Calculator() {
             <Visor history={history} result={result} />
             <ContainerButtons>
                 <HeaderButtonsContainer>
-                    <HeaderButton title="Sum" textToHistory="+" operacao="+" special={true} callbackClick={makeAccontOperation}>
+                    <HeaderButton title="Sum" textToHistory="+" operacao="+" special={true} callbackClick={performCalculation}>
                         <FaPlus />
                     </HeaderButton>
-                    <HeaderButton title="Subtraction" textToHistory="-" operacao="-" special={false} callbackClick={makeAccontOperation}>
+                    <HeaderButton title="Subtraction" textToHistory="-" operacao="-" special={false} callbackClick={performCalculation}>
                         <FaMinus />
                     </HeaderButton>
-                    <HeaderButton title="Multiplication" textToHistory="x" operacao="*" special={false} callbackClick={makeAccontOperation}>
+                    <HeaderButton title="Multiplication" textToHistory="x" operacao="*" special={false} callbackClick={performCalculation}>
                         <FaPlus />
                     </HeaderButton>
-                    <HeaderButton title="Division" textToHistory="÷" operacao="/" special={false} callbackClick={makeAccontOperation}>
+                    <HeaderButton title="Division" textToHistory="÷" operacao="/" special={false} callbackClick={performCalculation}>
                         <FaDivide />
                     </HeaderButton>
-                    <HeaderButton title="Exponentiation" textToHistory="^" operacao="^" special={false} callbackClick={makeAccontOperation}>
+                    <HeaderButton title="Exponentiation" textToHistory="^" operacao="^" special={false} callbackClick={performCalculation}>
                         <FaSuperscript />
                     </HeaderButton>
-                    <HeaderButton title="Equal" textToHistory="=" operacao="=" special={true} callbackClick={makeAccontOperation}>
+                    <HeaderButton title="Equal" textToHistory="=" operacao="=" special={true} callbackClick={performCalculation}>
                         <FaEquals />
                     </HeaderButton>
                 </HeaderButtonsContainer>
                 <NumberButtonsContainer>
-                    <NumberButton title='Number 1' number={1} special={false} callbackClick={incrementHistory} children={"1"} /> 
+                    <NumberButton title='Number 1' number={1} special={false} callbackClick={incrementHistory} children={"1"} />
                     <NumberButton title='Number 2' number={2} special={false} callbackClick={incrementHistory} children={"2"} />
                     <NumberButton title='Number 3' number={3} special={false} callbackClick={incrementHistory} children={"3"} />
                     <NumberButton title='Number 4' number={4} special={false} callbackClick={incrementHistory} children={"4"} />

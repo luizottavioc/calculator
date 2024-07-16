@@ -1,5 +1,5 @@
 function Footer(props) {
-    return(
+    return (
         <div className="footer">{props.text}</div>
     );
 }

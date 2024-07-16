@@ -1,4 +1,4 @@
-function IconNavbarSocial(props)  {
+function IconNavbarSocial(props) {
     return (
         <a className="icon-social" href={props.href} target='_blank' rel="noreferrer">
             {props.children}
